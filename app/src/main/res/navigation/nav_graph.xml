@@ -11,12 +11,21 @@
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
-            android:id="@+id/action_splashFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_splashFragment_to_guidelineFragment"
+            app:destination="@id/guidelineFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.example.myapplication.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main" />
+    <fragment
+        android:id="@+id/guidelineFragment"
+        android:name="com.example.myapplication.GuidelineFragment"
+        android:label="fragment_guideline"
+        tools:layout="@layout/fragment_guideline" >
+        <action
+            android:id="@+id/action_guidelineFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

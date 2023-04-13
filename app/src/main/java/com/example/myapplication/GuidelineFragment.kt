@@ -1,14 +1,12 @@
 package com.example.myapplication
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
-import com.example.myapplication.databinding.FragmentSplashBinding
+import com.example.myapplication.databinding.FragmentGuidelineBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -17,10 +15,10 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [SplashFragment.newInstance] factory method to
+ * Use the [GuidelineFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class SplashFragment : Fragment() {
+class GuidelineFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -37,14 +35,26 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val binding = FragmentSplashBinding.inflate(inflater, container, false)
-
-
-        
-        Handler(Looper.myLooper()!!).postDelayed({
-            findNavController().navigate(R.id.action_splashFragment_to_guidelineFragment)
-        },3000)
-
+        var count = 0
+        val binding = FragmentGuidelineBinding.inflate(inflater, container, false)
+        binding.next.setOnClickListener {
+            when (count) {
+                0 -> {
+                    binding.des.text = "Learn anytime and anywhere easily and conveniently"
+                    binding.img.setImageResource(R.drawable.img_3)
+                    count++
+                }
+                1 -> {
+                    binding.des.text = "Let's improve your skills together with Elera right now!"
+                    binding.img.setImageResource(R.drawable.img)
+                    binding.next.text = "Get Started"
+                    count++
+                }
+                2 -> {
+                    findNavController().navigate(R.id.action_guidelineFragment_to_mainFragment)
+                }
+            }
+        }
         return binding.root
     }
 
@@ -55,12 +65,12 @@ class SplashFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment SplashFragment.
+         * @return A new instance of fragment GuidelineFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            SplashFragment().apply {
+            GuidelineFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
