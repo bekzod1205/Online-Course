@@ -40,6 +40,7 @@ class SplashFragment : Fragment() {
         val binding = FragmentSplashBinding.inflate(inflater, container, false)
 
 
+
         
         Handler(Looper.myLooper()!!).postDelayed({
             findNavController().navigate(R.id.action_splashFragment_to_guidelineFragment)
