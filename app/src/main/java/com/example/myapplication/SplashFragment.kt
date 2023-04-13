@@ -37,6 +37,8 @@ class SplashFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
         val binding = FragmentSplashBinding.inflate(inflater, container, false)
 
 
