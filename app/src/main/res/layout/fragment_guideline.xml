@@ -11,8 +11,8 @@
         android:layout_width="300dp"
         android:layout_height="300dp"
         android:layout_gravity="center"
-        android:src="@drawable/img_1"
-        android:layout_marginVertical="20dp"/>
+        android:layout_marginVertical="50dp"
+        android:src="@drawable/img_1" />
 
     <TextView
         android:id="@+id/des"
@@ -31,10 +31,8 @@
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
         android:background="@drawable/button"
-        android:backgroundTint="#486ffb"
         android:text="Next"
         android:textAllCaps="false"
         android:textColor="@color/white"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 </LinearLayout>

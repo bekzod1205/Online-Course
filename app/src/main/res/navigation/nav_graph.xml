@@ -12,20 +12,30 @@
         tools:layout="@layout/fragment_splash" >
         <action
             android:id="@+id/action_splashFragment_to_guidelineFragment"
-            app:destination="@id/guidelineFragment" />
+            app:destination="@id/guidelineFragment"
+            app:popUpToInclusive="false" />
     </fragment>
-    <fragment
-        android:id="@+id/mainFragment"
-        android:name="com.example.myapplication.MainFragment"
-        android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/guidelineFragment"
         android:name="com.example.myapplication.GuidelineFragment"
         android:label="fragment_guideline"
         tools:layout="@layout/fragment_guideline" >
         <action
-            android:id="@+id/action_guidelineFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+            android:id="@+id/action_guidelineFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.example.myapplication.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_profileFillFragment"
+            app:destination="@id/profileFillFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFillFragment"
+        android:name="com.example.myapplication.ProfileFillFragment"
+        android:label="fragment_profile_fill"
+        tools:layout="@layout/fragment_profile_fill" />
 </navigation>

@@ -51,7 +51,8 @@ class GuidelineFragment : Fragment() {
                     count++
                 }
                 2 -> {
-                    findNavController().navigate(R.id.action_guidelineFragment_to_mainFragment)
+                    findNavController().navigate(R.id.action_guidelineFragment_to_signUpFragment)
+
                 }
             }
         }
